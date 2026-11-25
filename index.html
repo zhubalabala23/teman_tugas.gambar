@@ -91,7 +91,7 @@ const DATA = {
 // =======================================================================
 let cat = Object.keys(DATA)[0];
 const $ = id => document.getElementById(id);
-const rp = n => "Rp " + (Math.round(n*1000/1000)*1000).toLocaleString("id-ID");
+const rp = n => "Rp " + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 function render(){
   $("tabs").innerHTML = Object.keys(DATA).map(c =>
